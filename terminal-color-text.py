@@ -12,6 +12,6 @@ class Color:
     UNDERLINE = '\033[4m'
     INVISIBLE = '\033[08m'
     REVERCE   = '\033[07m'
-
+class Bold:
 print(Color.GREEN + "Green" + Color.END)
 print(Color.RED + "RED" + Color.END)
