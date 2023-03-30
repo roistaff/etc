@@ -34,9 +34,29 @@ var Color = struct {
 	REVERCE:   "\033[07m",
 }
 
+func Decorate(text string, option string) string {
+	var decorated string
+	switch option {
+	case "RED":
+		decorated = Color.RED + text + Color.END
+	case "GREEN":
+		decorated = Color.GREEN + text + Color.END
+	case "BOLD":
+		decorated = Color.BOLD + text + Color.END
+	case "UNDERLINE":
+		decorated = Color.UNDERLINE + text + Color.END
+	case "BLUE":
+		decorated = Color.BLUE + text + Color.END
+	case "YELLOW":
+		decorated = Color.YELLOW + text + Color.END
+	default:
+		decorated = text
+	}
+	return decorated
+}
+
 func main() {
 	red := Color.RED + "red?" + Color.END
 	fmt.Println(red)
+	fmt.Printf(Decorate("Hello", "UNDERLINE"))
 }
-
-
